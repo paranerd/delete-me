@@ -1,0 +1,21 @@
+steps:
+- name: 'alpine'
+  entrypoint: 'sh'  
+  args: 
+  - '-c'
+  - | 
+      echo "***********************"
+      pwd
+      echo "***********************"
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  args:
+  - gcloud
+  - functions
+  - deploy
+  - hello-1
+  - --region=europe-west3
+  - --trigger-http
+  - --runtime=nodejs22
+  - --allow-unauthenticated
+options:
+  logging: CLOUD_LOGGING_ONLY
