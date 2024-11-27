@@ -16,6 +16,7 @@ steps:
   - --region=europe-west3
   - --trigger-http
   - --runtime=nodejs22
+  - --entry-point=helloHttp
   - --allow-unauthenticated
 options:
   logging: CLOUD_LOGGING_ONLY
